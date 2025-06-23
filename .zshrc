@@ -12,7 +12,19 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /etc/profile
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+###### Use regular fonts in TTY ######
+if [[ "$TERM" == "xterm-kitty" ]] || [[ -n "$KITTY_WINDOW_ID" ]]; then
+  [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+else
+  # Source your preferred fallback prompt/theme here, or do nothing for default
+  # Example: source ~/.zshrc-plain
+fi
+######################################
+
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
 
 # History saves
 HISTFILE=~/.zsh_history
@@ -45,6 +57,15 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# Changing "ls" to "eza"
+# alias ls='eza -al --color=always --group-directories-first' # my preferred listing
+# alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+# alias ll='eza -l --color=always --group-directories-first'  # long format
+# alias lt='eza -aT --color=always --group-directories-first' # tree listing
+
+alias vim=nvim
+
 # Set up socket for ssh-agent.
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export MANPAGER='nvim +Man!'
+
