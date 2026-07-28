@@ -27,12 +27,6 @@
 		"network",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"backlight",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"battery",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"tray"
 	],
 
@@ -88,26 +82,7 @@
                 "car": "",
                 "default": ["", "", ""]
             },
-        	"on-click": "helvum"
-        },
-        "pulseaudio": {
-            // "scroll-step": 1, // %, can be a float
-            "format": "{volume}% {icon} {format_source}",
-            "format-bluetooth": "{volume}% {icon} {format_source}",
-            "format-bluetooth-muted": " {icon} {format_source}",
-            "format-muted": " {format_source}",
-            "format-source": "{volume}% ",
-            "format-source-muted": "",
-            "format-icons": {
-                "headphone": "",
-                "hands-free": "",
-                "headset": "",
-                "phone": "",
-                "portable": "",
-                "car": "",
-                "default": ["", "", ""]
-            },
-            "on-click": "pavucontrol"
+        	"on-click": "pavucontrol"
         },
         "network": {
             // "interface": "wlp2*", // (Optional) To force the use of this interface
